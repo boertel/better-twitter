@@ -1,3 +1,5 @@
-.tweet[data-component-context="suggest_activity_tweet"] {
+.tweet[data-component-context="suggest_activity_tweet"],
+.tweet[data-promoted="true"]
+{
   display:none;
 }
