@@ -7,8 +7,12 @@
             "matches": [
                 "https://twitter.com/*"
             ],
+            "js": [
+                "jquery-3.2.1.min.js",
+                "better-twitter.js"
+            ],
             "css": [
-              "better-twitter.css"
+                "better-twitter.css"
             ],
             "run_at": "document_end"
         }
