@@ -1,5 +1,12 @@
 .tweet[data-component-context="suggest_activity_tweet"],
-.tweet[data-promoted="true"]
+.tweet[data-promoted="true"],
+ .dashboard-left,
+ .dashboard-right
 {
   display:none;
+}
+
+.content-main {
+    float: none !important;
+    margin: 0 auto !important;
 }

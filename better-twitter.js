@@ -4,13 +4,8 @@ function injectStyles(rule) {
   }).appendTo("body");
 }
 
-var KEY = 'lastId:' + location.pathname;
-var PERMALINK_KEY = 'permalink:' + location.pathname;
-
-var lastId = localStorage.getItem(KEY)
-var permalink = localStorage.getItem(PERMALINK_KEY)
-window.setTimeout(function() {
-    console.log('looking for:', KEY, lastId, $('#stream-item-tweet-' + lastId ).length, '#stream-item-tweet-' + lastId, 'https://twitter.com/' + permalink);
+function hideTweets(lastId, permalink) {
+    console.log('looking for:', KEY, lastId, $('#stream-item-tweet-' + lastId ).length, '#stream-item-tweet-' + lastId, 'https://twitter.com' + permalink);
 
     if (lastId) {
         var rules = [
@@ -21,6 +16,15 @@ window.setTimeout(function() {
         var hover = rules.map(function(rule) { return rule + ':hover'; })
         injectStyles(rules.join(', ') + ' { opacity: 0.5; transition: 0.2s; } ' + hover.join(', ') + ' { opacity: 1; }')
     }
+}
+
+var KEY = 'lastId:' + location.pathname;
+var PERMALINK_KEY = 'permalink:' + location.pathname;
+
+var lastId = localStorage.getItem(KEY)
+var permalink = localStorage.getItem(PERMALINK_KEY)
+window.setTimeout(function() {
+    hideTweets(lastId, permalink);
 }, 500);
 
 var last = jQuery('.stream-items li.stream-item:first-child')
